@@ -113,6 +113,6 @@ Este projeto marcou a transição do paradigma do Rails (ActiveRecord, Scaffolds
 
 ---
 
-## 👨 Autor
+##  Autor
 
 Feito com 💙 e muito café. **Júlio Cesar** – [GitHub](https://github.com/Julio1099)
