@@ -1,0 +1,15 @@
+# .gitignore
+
+# Arquivos do Python compilados
+__pycache__/
+*.py[cod]
+
+# Ambiente Virtual (NUNCA suba isso)
+venv/
+env/
+
+# Banco de dados (Geralmente não subimos o banco local)
+db.sqlite3
+
+# Arquivos de mídia (uploads de teste)
+media/

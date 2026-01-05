@@ -1,0 +1,47 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<div class="row mb-4 align-items-center">
+    <div class="col-md-8">
+        <h1>Nossos Produtos</h1>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{% url 'product_create' %}" class="btn btn-success">Adicionar Produto</a>
+    </div>
+</div>
+
+<div class="row">
+    {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                {% else %}
+                    <div class="text-center py-5 bg-light text-muted">Sem Imagem</div>
+                {% endif %}
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="badge bg-secondary">{{ product.category.name }}</p>
+                    <h4 class="text-primary">R$ {{ product.price }}</h4>
+                    <p class="card-text text-truncate">{{ product.description }}</p>
+                </div>
+
+                <div class="card-footer bg-white d-flex justify-content-between">
+                    <a href="{% url 'product_detail' product.pk %}" class="btn btn-sm btn-info text-white">Detalhes</a>
+                    <div>
+                        <a href="{% url 'product_update' product.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{% url 'product_delete' product.pk %}" class="btn btn-sm btn-danger">X</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12 text-center">
+            <div class="alert alert-warning">Nenhum produto cadastrado ainda.</div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
