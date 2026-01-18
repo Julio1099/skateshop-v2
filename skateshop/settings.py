@@ -8,6 +8,7 @@ Merged for Render.com deployment.
 import os
 from pathlib import Path
 import dj_database_url
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -129,3 +130,10 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+try:
+    from django.db import connection
+
+    print(f" BANCO EM USO: {connection.vendor}")
+except:
+    pass
