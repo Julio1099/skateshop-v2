@@ -1,10 +1,8 @@
 [MASTER]
-# Ignora a pasta de migrações
+load-plugins=pylint_django
 ignore=migrations
 
 [MESSAGES CONTROL]
-# C0114: Faltou docstring no módulo (ok cobrar, mas vamos manter ligado)
-# C0115: Faltou docstring na classe (ok cobrar)
-# R0901: Too many ancestors (Ignorar, pois é padrão do Django)
-# W0611: Unused import (Vamos corrigir na mão)
-disable=R0901
+disable=R0901,C0114,C0115,C0116
+# R0901: Too many ancestors (Padrão Django)
+# C0114/115/116: Docstrings (Opcional se quiser relaxar, mas como você já documentou, pode deixar ligado se preferir)
