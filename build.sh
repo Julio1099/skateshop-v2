@@ -11,4 +11,4 @@ python manage.py collectstatic --no-input
 # 3. Cria as tabelas no Banco de Dados (Postgres)
 python manage.py migrate
 
-python manage.py createsuperuser --noinput || true
+#python manage.py createsuperuser --noinput || true
