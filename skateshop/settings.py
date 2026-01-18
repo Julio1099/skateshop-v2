@@ -18,14 +18,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ==============================================================================
 
 # 1. A chave secreta pega do ambiente ou usa uma padrão insegura (só para dev local)
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-chave-padrao-para-dev')
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-chave-padrao-para-dev")
 
 # 2. Debug é True no seu PC, mas False quando estiver no Render
-DEBUG = 'RENDER' not in os.environ
+DEBUG = "RENDER" not in os.environ
 
 # 3. Define quem pode acessar o site
 ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
@@ -80,11 +80,11 @@ WSGI_APPLICATION = "skateshop.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
+    "default": dj_database_url.config(
         # Localmente usa SQLite
-        default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'),
+        default="sqlite:///" + str(BASE_DIR / "db.sqlite3"),
         # Mantém a conexão ativa por 10min (melhora performance no Render)
-        conn_max_age=600
+        conn_max_age=600,
     )
 }
 
