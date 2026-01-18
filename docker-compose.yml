@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"  # Conecta a porta 8000 do seu PC na 8000 do Container
+    volumes:
+      - .:/app       # Espelhamento: Se você editar o código no PC, muda no container na hora
