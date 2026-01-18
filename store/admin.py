@@ -1,6 +1,7 @@
 """
 Configuração da interface administrativa do Django.
 """
+
 from django.contrib import admin
 from .models import Category, Product
 

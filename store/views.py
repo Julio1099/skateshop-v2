@@ -1,6 +1,7 @@
 """
 Lógica de controle e exibição (Views) das páginas da loja.
 """
+
 from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
@@ -66,4 +67,3 @@ class ProductDeleteView(DeleteView):
     model = Product
     template_name = "store/product_confirm_delete.html"
     success_url = reverse_lazy("product_list")
-    

@@ -1,6 +1,7 @@
 """
 Definição dos Modelos de Dados (Tabelas) do sistema de Skate Shop.
 """
+
 from django.db import models
 
 
@@ -33,4 +34,3 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.name)
-    
