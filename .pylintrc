@@ -1,8 +1,7 @@
 [MASTER]
 load-plugins=pylint_django
+django-settings-module=skateshop.settings
 ignore=migrations
 
 [MESSAGES CONTROL]
 disable=R0901,C0114,C0115,C0116
-# R0901: Too many ancestors (Padrão Django)
-# C0114/115/116: Docstrings (Opcional se quiser relaxar, mas como você já documentou, pode deixar ligado se preferir)
