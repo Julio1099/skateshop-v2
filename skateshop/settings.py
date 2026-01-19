@@ -138,19 +138,20 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 # Configuração do Cloudinary
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+    "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.environ.get("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
 }
 
 # Se a chave da API existir (no Render), usa Cloudinary.
 # Se não existir (no seu PC sem config), usa arquivo local.
-if os.environ.get('CLOUDINARY_API_KEY'):
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+if os.environ.get("CLOUDINARY_API_KEY"):
+    DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Debug simples para saber qual banco está rodando nos logs
 try:
     from django.db import connection
+
     print(f"😎 BANCO EM USO: {connection.vendor}")
 except:
     pass
